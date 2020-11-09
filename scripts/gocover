@@ -1,0 +1,8 @@
+
+set -e
+go test ./test/... -covermode=count -coverprofile=cover.out
+go test ./test/... -json > test-report.out
+go test ./test/... -coverprofile=coverage.out
+go tool cover -func=cover.out
+$HOME/gopath/bin/goveralls -coverprofile=cover.out -service=travis.coverprofile
+
