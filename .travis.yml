@@ -8,5 +8,4 @@ install:
 script : 
   - go test ./test/ -covermode=count -coverprofile=coverage.out
   - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci
-sudo : false
 
