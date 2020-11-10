@@ -7,5 +7,4 @@ install:
   - go get github.com/gorilla/mux
 script : 
   - go test ./test/ -v
-  - $HOME/gopath/bin/goveralls -coverprofile=coverage.out -service=travis-ci
 
