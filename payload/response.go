@@ -52,6 +52,7 @@ func MessageResponse(w http.ResponseWriter, message string, data interface{}, st
 	if err != nil {
 		log.Fatal(err)
 	}
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(status)
 	w.Write(body)
 

@@ -18,4 +18,10 @@ var welcomeRoute = []Route{
 		Handler:      controller.Add,
 		AuthRequired: false,
 	},
+	Route{
+		URI:          "/products",
+		Method:       http.MethodGet,
+		Handler:      controller.GetAll,
+		AuthRequired: false,
+	},
 }
