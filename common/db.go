@@ -25,7 +25,7 @@ func Connect() error {
 	// 	host, port, user, password, dbname)
 
 	//fmt.Println(psqlInfo)
-	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
+	db, err := sql.Open("postgres", os.Getenv("HEROKU_POSTGRESQL_PURPLE_URL"))
 	if err != nil {
 		return err
 	}
