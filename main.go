@@ -12,9 +12,10 @@ import (
 )
 
 func main() {
+	port := os.Getenv("PORT")
 	r := router.New()
 
-	log.Fatal(http.ListenAndServe(os.Getenv("PORT"), r))
+	log.Fatal(http.ListenAndServe(":"+port, r))
 }
 
 //TestFunc ...
