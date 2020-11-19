@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 
 	//"log"
 	"net/http"
@@ -13,7 +14,7 @@ import (
 func main() {
 	r := router.New()
 
-	log.Fatal(http.ListenAndServe(":8000", r))
+	log.Fatal(http.ListenAndServe(os.Getenv("PORT"), r))
 }
 
 //TestFunc ...
