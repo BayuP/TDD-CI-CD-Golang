@@ -2,7 +2,8 @@ package common
 
 import (
 	"database/sql"
-	"fmt"
+
+	"os"
 
 	_ "github.com/lib/pq"
 )
@@ -19,12 +20,12 @@ const (
 
 func Connect() error {
 
-	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
-		"password=%s dbname=%s sslmode=disable",
-		host, port, user, password, dbname)
+	// psqlInfo := fmt.Sprintf("host=%s port=%d user=%s "+
+	// 	"password=%s dbname=%s sslmode=disable",
+	// 	host, port, user, password, dbname)
 
 	//fmt.Println(psqlInfo)
-	db, err := sql.Open("postgres", psqlInfo)
+	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL"))
 	if err != nil {
 		return err
 	}
